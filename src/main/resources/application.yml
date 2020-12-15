@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: gcpdemo
+    instance_id: ${random.uuid}
+server:
+  port: 9080

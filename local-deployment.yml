@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcpdemo
+  labels:
+    app: gcpdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gcpdemo
+  template:
+    metadata:
+      labels:
+        app: gcpdemo
+    spec:
+      containers:
+        - name: gcpdemo
+          image: gcpdemo:v1
+          ports:
+            - containerPort: 9080

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcpdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gcpdemo
+  template:
+    metadata:
+      labels:
+        app: gcpdemo
+    spec:
+      containers:
+        - name: gcpdemo
+          image: gcr.io/deer-prototype-280907/gcpdemo:v1
+          ports:
+            - containerPort: 9080
